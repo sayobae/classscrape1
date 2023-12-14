@@ -1,0 +1,20 @@
+import re
+
+text = """
+"""
+
+# Use regular expressions to extract names
+names = re.findall(r'(\w+), (\w+)', text)
+
+# Use a set to store unique names
+unique_names = set()
+
+# Print each name with first name first, last name last
+for last_name, first_name in names:
+    # Create a formatted name
+    formatted_name = f"{first_name} {last_name}"
+    
+    # Check for duplicates before printing
+    if formatted_name not in unique_names:
+        print(formatted_name)
+        unique_names.add(formatted_name)
